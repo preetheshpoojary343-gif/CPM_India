@@ -1,0 +1,2294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Common People Movement — People Before Politics</title>
+<meta name="description" content="Common People Movement (CPM) — A citizen-powered reform movement for transparency, dignity, opportunity, and systemic change in India.">
+<meta property="og:title" content="Common People Movement — India Deserves Better">
+<meta property="og:description" content="Join India's premier democratic reform movement. Anti-corruption, Free Education, Healthcare, and System Reform.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0A2342;
+  --navy-mid: #0d2d54;
+  --navy-light: #163a6e;
+  --saffron: #FF9933;
+  --saffron-light: #ffb347;
+  --saffron-dark: #e07800;
+  --green: #138808;
+  --green-light: #1aaa0a;
+  --white: #FFFFFF;
+  --off-white: #F8F6F0;
+  --gold: #D4A843;
+  --gold-light: #f0c85a;
+  --glass: rgba(255,255,255,0.07);
+  --glass-border: rgba(255,255,255,0.13);
+  --text-dim: rgba(255,255,255,0.6);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--saffron); border-radius: 3px; }
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 0 clamp(1rem, 4vw, 3rem);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(10,35,66,0.92);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,153,51,0.18);
+  transition: background 0.3s;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-emblem {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.logo-text { line-height: 1.1; }
+.logo-text .cpm { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--saffron); letter-spacing: 0.08em; }
+.logo-text .full { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; color: rgba(255,255,255,0.55); letter-spacing: 0.12em; text-transform: uppercase; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2rem);
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.75);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--saffron); }
+
+.nav-cta {
+  background: linear-gradient(135deg, var(--saffron), var(--saffron-dark));
+  color: var(--navy) !important;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 700 !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(255,153,51,0.4); }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 100px clamp(1.5rem, 6vw, 6rem) 60px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 20% 60%, rgba(19,136,8,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 70% at 80% 30%, rgba(255,153,51,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, rgba(13,45,84,0.95) 0%, var(--navy) 100%);
+}
+
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: float-particle linear infinite;
+  opacity: 0;
+}
+
+@keyframes float-particle {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-100px) rotate(720deg); opacity: 0; }
+}
+
+.hero-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,153,51,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,153,51,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,153,51,0.1);
+  border: 1px solid rgba(255,153,51,0.3);
+  border-radius: 30px;
+  padding: 8px 18px;
+  margin-bottom: 2.5rem;
+  animation: fade-up 0.8s ease both;
+}
+
+.hero-badge .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--saffron);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+.hero-badge span {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--saffron);
+}
+
+.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 900;
+  line-height: 1.0;
+  margin-bottom: 1.5rem;
+  animation: fade-up 0.8s 0.1s ease both;
+}
+
+.hero-headline .accent {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--saffron);
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  max-width: 560px;
+  margin-bottom: 3rem;
+  font-weight: 300;
+  animation: fade-up 0.8s 0.2s ease both;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  animation: fade-up 0.8s 0.3s ease both;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--saffron), #e07800);
+  color: var(--navy);
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(255,153,51,0.45); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--white);
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 13px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-outline:hover { border-color: var(--saffron); color: var(--saffron); transform: translateY(-2px); }
+
+.btn-green {
+  background: linear-gradient(135deg, var(--green-light), var(--green));
+  color: white;
+}
+.btn-green:hover { box-shadow: 0 12px 36px rgba(19,136,8,0.4); }
+
+.hero-stats {
+  position: absolute;
+  right: clamp(2rem, 8vw, 8rem);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fade-left 0.9s 0.4s ease both;
+  z-index: 2;
+}
+
+.stat-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  border-radius: 16px;
+  padding: 20px 28px;
+  text-align: center;
+  min-width: 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--saffron), transparent);
+}
+
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--saffron);
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 4px;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-left {
+  from { opacity: 0; transform: translate(40px, -50%); }
+  to { opacity: 1; transform: translate(0, -50%); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── SECTION COMMONS ── */
+section {
+  padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 6rem);
+  position: relative;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 1rem;
+}
+
+.section-tag::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--saffron);
+}
+
+h2.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+
+.section-desc {
+  color: rgba(255,255,255,0.6);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 600px;
+  font-weight: 300;
+}
+
+/* ── MARQUEE TICKER ── */
+.ticker-wrap {
+  background: linear-gradient(135deg, var(--saffron-dark), var(--saffron));
+  padding: 12px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-inner {
+  display: inline-flex;
+  animation: ticker 30s linear infinite;
+}
+
+.ticker-item {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy);
+  padding: 0 3rem;
+}
+
+.ticker-item::after {
+  content: '◆';
+  margin-left: 3rem;
+  opacity: 0.5;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ── VISION SECTION ── */
+#vision {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%);
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.vision-emblem-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vision-emblem {
+  width: clamp(260px, 30vw, 400px);
+  height: clamp(260px, 30vw, 400px);
+  animation: slow-spin 20s linear infinite;
+}
+
+@keyframes slow-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.vision-text .vision-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-style: italic;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.65;
+  border-left: 3px solid var(--saffron);
+  padding-left: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.ideology-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 2rem;
+}
+
+.chip {
+  background: rgba(255,153,51,0.1);
+  border: 1px solid rgba(255,153,51,0.25);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.8);
+  transition: 0.2s;
+}
+.chip:hover { background: rgba(255,153,51,0.2); border-color: var(--saffron); color: var(--white); }
+
+/* ── PILLARS ── */
+#pillars {
+  background: var(--navy-mid);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.pillar-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s;
+  cursor: default;
+}
+
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,153,51,0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.pillar-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255,153,51,0.4);
+}
+.pillar-card:hover::before { opacity: 1; }
+
+.pillar-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.pillar-icon.saffron { background: rgba(255,153,51,0.15); }
+.pillar-icon.green { background: rgba(19,136,8,0.15); }
+.pillar-icon.gold { background: rgba(212,168,67,0.15); }
+.pillar-icon.blue { background: rgba(30,90,200,0.15); }
+
+.pillar-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--white);
+}
+
+.pillar-card p {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+.pillar-number {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+}
+
+/* ── MANIFESTO SECTION ── */
+#manifesto {
+  background: var(--navy);
+}
+
+.manifesto-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.manifesto-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.mtab {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 30px;
+  padding: 9px 20px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.mtab:hover, .mtab.active {
+  background: rgba(255,153,51,0.15);
+  border-color: var(--saffron);
+  color: var(--saffron);
+}
+
+.manifesto-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.mcard {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  transition: 0.3s;
+}
+.mcard:hover { border-color: rgba(255,153,51,0.35); transform: translateY(-4px); }
+
+.mcard-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 0.75rem;
+}
+
+.mcard h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.mcard ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.mcard ul li {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+.mcard ul li::before {
+  content: '→';
+  color: var(--saffron);
+  font-size: 0.75rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ── REFORM TIMELINE ── */
+#timeline {
+  background: var(--navy-mid);
+  overflow: hidden;
+}
+
+.timeline-track {
+  position: relative;
+  margin-top: 4rem;
+  padding-left: 2rem;
+}
+
+.timeline-track::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--saffron) 0%, var(--green) 50%, var(--gold) 100%);
+}
+
+.tl-item {
+  position: relative;
+  padding: 0 0 3rem 3rem;
+}
+
+.tl-dot {
+  position: absolute;
+  left: -9px;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid var(--navy-mid);
+  background: var(--saffron);
+}
+
+.tl-item:nth-child(2) .tl-dot { background: var(--green); }
+.tl-item:nth-child(3) .tl-dot { background: var(--gold); }
+.tl-item:nth-child(4) .tl-dot { background: #4a90e2; }
+
+.tl-phase {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--saffron);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.tl-item:nth-child(2) .tl-phase { color: var(--green-light); }
+.tl-item:nth-child(3) .tl-phase { color: var(--gold-light); }
+.tl-item:nth-child(4) .tl-phase { color: #6aabf7; }
+
+.tl-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.tl-desc {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  max-width: 600px;
+}
+
+.tl-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.tl-tag {
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.55);
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+}
+
+/* ── TRANSPARENCY DASHBOARD ── */
+#transparency {
+  background: var(--navy);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.dash-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.dash-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+}
+
+.dash-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.dash-badge {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.badge-live { background: rgba(0,200,100,0.15); color: #00c864; border: 1px solid rgba(0,200,100,0.3); }
+.badge-open { background: rgba(255,153,51,0.15); color: var(--saffron); border: 1px solid rgba(255,153,51,0.3); }
+
+.dash-value {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
+
+.dash-sub { font-size: 0.78rem; color: var(--text-dim); }
+
+.progress-bar {
+  height: 4px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--saffron), var(--gold-light));
+  transition: width 1.5s ease;
+}
+
+.progress-fill.green { background: linear-gradient(90deg, var(--green), var(--green-light)); }
+
+/* ── JOIN SECTION ── */
+#join {
+  background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+#join::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,153,51,0.08) 0%, transparent 70%);
+}
+
+.join-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: center;
+}
+
+.join-form {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.form-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.full { grid-column: 1 / -1; }
+
+label {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+input, select, textarea {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 11px 14px;
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+
+input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.25); }
+input:focus, select:focus, textarea:focus { border-color: var(--saffron); }
+
+select option { background: var(--navy-mid); color: var(--white); }
+
+textarea { resize: vertical; min-height: 80px; }
+
+.submit-btn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 14px;
+  font-size: 0.9rem;
+  border-radius: 12px;
+}
+
+/* ── YOUTH SECTION ── */
+#youth {
+  background: var(--navy-mid);
+  text-align: center;
+}
+
+.youth-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+  text-align: left;
+}
+
+.youth-card {
+  background: linear-gradient(135deg, rgba(255,153,51,0.08), rgba(19,136,8,0.05));
+  border: 1px solid rgba(255,153,51,0.15);
+  border-radius: 20px;
+  padding: 1.75rem;
+  transition: 0.3s;
+}
+.youth-card:hover { transform: translateY(-6px); border-color: rgba(255,153,51,0.4); }
+
+.youth-card .emoji { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
+.youth-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; }
+.youth-card p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
+
+/* ── CONTACT / SOCIAL ── */
+#contact {
+  background: var(--navy);
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.social-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+.social-card:hover { transform: translateY(-4px); border-color: var(--saffron); }
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.social-card h3 { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; }
+.social-card p { font-size: 0.75rem; color: var(--text-dim); }
+
+/* ── DONATION ── */
+#donate {
+  background: linear-gradient(135deg, #0A1F3A, #0d2d54);
+  text-align: center;
+}
+
+.donate-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.donate-amounts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2.5rem 0;
+}
+
+.amount-btn {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 14px 28px;
+  color: var(--white);
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.amount-btn:hover, .amount-btn.active {
+  background: rgba(255,153,51,0.15);
+  border-color: var(--saffron);
+  color: var(--saffron);
+}
+
+.qr-placeholder {
+  width: 160px;
+  height: 160px;
+  background: var(--white);
+  border-radius: 16px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--navy);
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 1rem;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(10,35,66,0.1) 0px, rgba(10,35,66,0.1) 2px, transparent 2px, transparent 8px),
+    repeating-linear-gradient(90deg, rgba(10,35,66,0.1) 0px, rgba(10,35,66,0.1) 2px, transparent 2px, transparent 8px);
+}
+
+.ethical-note {
+  margin-top: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+}
+
+/* ── CHATBOT ── */
+.chatbot-fab {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 500;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--saffron), var(--saffron-dark));
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 8px 24px rgba(255,153,51,0.45);
+  transition: transform 0.2s;
+}
+.chatbot-fab:hover { transform: scale(1.1); }
+
+.chatbot-window {
+  position: fixed;
+  bottom: 7rem;
+  right: 2rem;
+  z-index: 500;
+  width: min(360px, calc(100vw - 2rem));
+  background: var(--navy-mid);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  display: none;
+  flex-direction: column;
+  max-height: 480px;
+}
+.chatbot-window.open { display: flex; }
+
+.chatbot-header {
+  background: linear-gradient(135deg, var(--saffron-dark), var(--saffron));
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chatbot-header .avatar {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.chatbot-header .info .name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--navy);
+}
+
+.chatbot-header .info .status {
+  font-size: 0.65rem;
+  color: rgba(10,35,66,0.7);
+}
+
+.chatbot-header .close-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--navy);
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.chatbot-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.msg {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.msg.bot {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.msg.user {
+  background: rgba(255,153,51,0.15);
+  border: 1px solid rgba(255,153,51,0.2);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  color: rgba(255,255,255,0.9);
+}
+
+.chatbot-input-wrap {
+  padding: 12px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  gap: 8px;
+}
+
+.chatbot-input {
+  flex: 1;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: var(--white);
+  font-size: 0.85rem;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+}
+
+.chatbot-send {
+  background: var(--saffron);
+  border: none;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--navy);
+  font-size: 1rem;
+  transition: 0.2s;
+}
+.chatbot-send:hover { background: var(--saffron-light); }
+
+/* ── FOOTER ── */
+footer {
+  background: #040e1a;
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 6vw, 6rem) 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand .tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: rgba(255,255,255,0.4);
+  margin: 0.75rem 0 1.25rem;
+  font-size: 0.9rem;
+}
+
+.footer-brand .vision-short {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.65;
+  max-width: 260px;
+}
+
+.footer-col h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 1rem;
+}
+
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-col ul a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.82rem;
+  transition: color 0.2s;
+}
+.footer-col ul a:hover { color: var(--white); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+}
+
+.tricolor-bar {
+  display: flex;
+  height: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+.tricolor-bar span { flex: 1; }
+.tricolor-bar .s { background: var(--saffron); }
+.tricolor-bar .w { background: var(--white); }
+.tricolor-bar .g { background: var(--green); }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .hero-stats { display: none; }
+  .vision-grid { grid-template-columns: 1fr; }
+  .vision-emblem-wrap { order: -1; }
+  .manifesto-content { grid-template-columns: 1fr; }
+  .join-grid { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .mobile-menu {
+    position: fixed;
+    top: 70px; left: 0; right: 0;
+    background: rgba(10,35,66,0.97);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid rgba(255,153,51,0.15);
+    z-index: 999;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.8);
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+
+  .hero-headline { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas .btn-primary, .hero-ctas .btn-outline { text-align: center; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .manifesto-tabs { gap: 0.5rem; }
+}
+
+/* ── COUNTER ANIMATION ── */
+.counter { display: inline-block; }
+
+/* ── GLOW EFFECTS ── */
+.glow-saffron { text-shadow: 0 0 30px rgba(255,153,51,0.5); }
+.glow-green { text-shadow: 0 0 30px rgba(19,136,8,0.5); }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <!-- Inline SVG Logo Emblem -->
+    <svg class="logo-emblem" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="40" cy="40" r="38" stroke="#FF9933" stroke-width="2" opacity="0.3"/>
+      <circle cx="40" cy="40" r="32" stroke="#FF9933" stroke-width="1" opacity="0.5"/>
+      <!-- Shield body -->
+      <path d="M40 12 L62 22 L62 42 C62 55 52 65 40 70 C28 65 18 55 18 42 L18 22 Z" fill="rgba(255,153,51,0.1)" stroke="#FF9933" stroke-width="1.5"/>
+      <!-- Torch -->
+      <rect x="37" y="32" width="6" height="18" rx="2" fill="#FF9933"/>
+      <ellipse cx="40" cy="30" rx="6" ry="5" fill="#FFD700"/>
+      <path d="M37 28 Q40 22 43 28" fill="#FF9933"/>
+      <!-- Handshake symbol -->
+      <path d="M26 50 Q33 45 40 48 Q47 45 54 50" stroke="#138808" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <path d="M26 53 Q33 48 40 51 Q47 48 54 53" stroke="#138808" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+      <!-- Stars -->
+      <circle cx="40" cy="22" r="1.5" fill="#FF9933"/>
+      <circle cx="32" cy="26" r="1" fill="#FF9933" opacity="0.6"/>
+      <circle cx="48" cy="26" r="1" fill="#FF9933" opacity="0.6"/>
+    </svg>
+    <div class="logo-text">
+      <div class="cpm">CPM</div>
+      <div class="full">Common People Movement</div>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#vision">About</a></li>
+    <li><a href="#manifesto">Manifesto</a></li>
+    <li><a href="#timeline">Roadmap</a></li>
+    <li><a href="#transparency">Transparency</a></li>
+    <li><a href="#youth">Youth Wing</a></li>
+    <li><a href="#donate">Donate</a></li>
+    <li><a href="#join" class="nav-cta">Join Movement</a></li>
+  </ul>
+
+  <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#vision" onclick="closeMenu()">About</a>
+  <a href="#manifesto" onclick="closeMenu()">Manifesto</a>
+  <a href="#timeline" onclick="closeMenu()">Roadmap</a>
+  <a href="#transparency" onclick="closeMenu()">Transparency</a>
+  <a href="#youth" onclick="closeMenu()">Youth Wing</a>
+  <a href="#join" onclick="closeMenu()">Join Movement</a>
+  <a href="#donate" onclick="closeMenu()">Donate</a>
+</div>
+
+<!-- ══════════════════════ HERO ══════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-particles" id="particles"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      <span>India's Reform Movement · Est. 2024</span>
+    </div>
+
+    <h1 class="hero-headline">
+      India<br>
+      <span class="accent">Deserves</span><br>
+      Better.
+    </h1>
+
+    <p class="hero-sub">
+      A citizen-powered reform movement for transparency, dignity, equal opportunity, and systemic change — for every Indian, in every corner of Bharat.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#join" class="btn-primary">
+        ⚡ Join Movement
+      </a>
+      <a href="#join" class="btn-primary btn-green">
+        🤝 Become Volunteer
+      </a>
+      <a href="#manifesto" class="btn-outline">
+        📜 Read Manifesto
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Stats -->
+  <div class="hero-stats">
+    <div class="stat-card">
+      <span class="stat-num counter" data-target="2500000">0</span>
+      <div class="stat-label">Members Nationwide</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num counter" data-target="28">0</span>
+      <div class="stat-label">States Active</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num counter" data-target="100">0</span>
+      <div class="stat-label">Reform Policies</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num counter" data-target="65">0</span>
+      <div class="stat-label">% Youth Members</div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner" id="ticker">
+    <span class="ticker-item">Anti-Corruption</span>
+    <span class="ticker-item">Free Education</span>
+    <span class="ticker-item">Universal Healthcare</span>
+    <span class="ticker-item">System Reform</span>
+    <span class="ticker-item">Judicial Reform</span>
+    <span class="ticker-item">Women Empowerment</span>
+    <span class="ticker-item">Digital India 2.0</span>
+    <span class="ticker-item">Farmer Welfare</span>
+    <span class="ticker-item">Youth Empowerment</span>
+    <span class="ticker-item">Transparent Governance</span>
+    <span class="ticker-item">Anti-Corruption</span>
+    <span class="ticker-item">Free Education</span>
+    <span class="ticker-item">Universal Healthcare</span>
+    <span class="ticker-item">System Reform</span>
+    <span class="ticker-item">Judicial Reform</span>
+    <span class="ticker-item">Women Empowerment</span>
+    <span class="ticker-item">Digital India 2.0</span>
+    <span class="ticker-item">Farmer Welfare</span>
+    <span class="ticker-item">Youth Empowerment</span>
+    <span class="ticker-item">Transparent Governance</span>
+  </div>
+</div>
+
+<!-- ══════════════════════ VISION ══════════════════════ -->
+<section id="vision">
+  <div class="vision-grid">
+    <div class="vision-emblem-wrap animate-on-scroll">
+      <!-- Large decorative emblem SVG -->
+      <svg class="vision-emblem" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer rings -->
+        <circle cx="150" cy="150" r="148" stroke="rgba(255,153,51,0.15)" stroke-width="1"/>
+        <circle cx="150" cy="150" r="130" stroke="rgba(255,153,51,0.1)" stroke-width="1" stroke-dasharray="8 4"/>
+        <circle cx="150" cy="150" r="110" stroke="rgba(19,136,8,0.2)" stroke-width="1"/>
+        <!-- Decorative dots on outer ring -->
+        <circle cx="150" cy="2" r="3" fill="#FF9933" opacity="0.6"/>
+        <circle cx="298" cy="150" r="3" fill="#FF9933" opacity="0.6"/>
+        <circle cx="150" cy="298" r="3" fill="#138808" opacity="0.6"/>
+        <circle cx="2" cy="150" r="3" fill="#FF9933" opacity="0.6"/>
+        <circle cx="256" cy="44" r="2" fill="#FF9933" opacity="0.4"/>
+        <circle cx="256" cy="256" r="2" fill="#138808" opacity="0.4"/>
+        <circle cx="44" cy="256" r="2" fill="#138808" opacity="0.4"/>
+        <circle cx="44" cy="44" r="2" fill="#FF9933" opacity="0.4"/>
+        <!-- Shield -->
+        <path d="M150 60 L220 90 L220 155 C220 200 190 230 150 248 C110 230 80 200 80 155 L80 90 Z" fill="rgba(255,153,51,0.06)" stroke="#FF9933" stroke-width="2"/>
+        <!-- Torch flame -->
+        <path d="M145 95 Q150 78 155 95 Q162 85 155 100 Q158 88 150 92 Q142 88 145 100 Q138 85 145 95Z" fill="#FFD700"/>
+        <path d="M147 100 Q150 88 153 100" fill="#FF9933" opacity="0.8"/>
+        <!-- Torch handle -->
+        <rect x="146" y="100" width="8" height="35" rx="3" fill="url(#torchGrad)"/>
+        <!-- Handshake -->
+        <path d="M105 165 L125 158 L140 162 L150 160 L160 162 L175 158 L195 165" stroke="#138808" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M112 172 L130 165 L142 169 L150 167 L158 169 L170 165 L188 172" stroke="#138808" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+        <!-- Star of hope -->
+        <path d="M150 190 L153 199 L162 199 L155 205 L158 214 L150 209 L142 214 L145 205 L138 199 L147 199 Z" fill="#FF9933" opacity="0.7"/>
+        <!-- Ashoka Chakra style small center -->
+        <circle cx="150" cy="135" r="4" fill="rgba(19,136,8,0.5)" stroke="#138808" stroke-width="1"/>
+        <defs>
+          <linearGradient id="torchGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#D4A843"/>
+            <stop offset="100%" stop-color="#8B6914"/>
+          </linearGradient>
+        </defs>
+        <!-- Text arc -->
+        <path id="arcTop" d="M 30 150 A 120 120 0 0 1 270 150" fill="none"/>
+        <text font-family="'Syne', sans-serif" font-size="11" font-weight="700" letter-spacing="4" fill="rgba(255,153,51,0.7)" text-transform="uppercase">
+          <textPath href="#arcTop" startOffset="5%">COMMON PEOPLE MOVEMENT</textPath>
+        </text>
+        <path id="arcBottom" d="M 270 150 A 120 120 0 0 1 30 150" fill="none"/>
+        <text font-family="'Syne', sans-serif" font-size="11" font-weight="700" letter-spacing="6" fill="rgba(19,136,8,0.7)">
+          <textPath href="#arcBottom" startOffset="20%">PEOPLE BEFORE POLITICS</textPath>
+        </text>
+      </svg>
+    </div>
+
+    <div class="vision-text animate-on-scroll">
+      <div class="section-tag">Our Vision</div>
+      <h2 class="section-title">Building a <span style="color:var(--saffron)">Citizen-First</span> India</h2>
+
+      <blockquote class="vision-quote">
+        "To build a corruption-free, educated, healthy, transparent, and citizen-first India where every individual can live with dignity, freedom, and equal opportunity."
+      </blockquote>
+
+      <p class="section-desc">
+        Common People Movement is not just a political organisation — it is a democratic revolution rooted in constitutional values, driven by data, and powered by the common citizen of India.
+      </p>
+
+      <div class="ideology-chips">
+        <div class="chip">Social Democracy</div>
+        <div class="chip">Anti-Corruption</div>
+        <div class="chip">Constitutional Freedoms</div>
+        <div class="chip">Administrative Reform</div>
+        <div class="chip">Economic Accountability</div>
+        <div class="chip">Youth Empowerment</div>
+        <div class="chip">Transparent Governance</div>
+        <div class="chip">Merit-Based Systems</div>
+        <div class="chip">Citizen-First Development</div>
+        <div class="chip">Welfare State</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ PILLARS ══════════════════════ -->
+<section id="pillars">
+  <div class="section-tag animate-on-scroll">Core Pillars</div>
+  <h2 class="section-title animate-on-scroll">Six Foundations of <span style="color:var(--saffron)">Reform</span></h2>
+  <p class="section-desc animate-on-scroll">Every policy, every promise, every action — grounded in these six non-negotiable commitments to every Indian.</p>
+
+  <div class="pillars-grid">
+    <div class="pillar-card animate-on-scroll">
+      <div class="pillar-number">01</div>
+      <div class="pillar-icon saffron">🛡️</div>
+      <h3>Anti-Corruption</h3>
+      <p>AI-powered monitoring, public audit systems, fast-track corruption courts, digital governance, and whistleblower protection to eradicate corruption at every level.</p>
+    </div>
+    <div class="pillar-card animate-on-scroll">
+      <div class="pillar-number">02</div>
+      <div class="pillar-icon green">📚</div>
+      <h3>Free Education</h3>
+      <p>Universal access to quality education — from rural schools to AI & coding curricula — ensuring every Indian child has the tools to compete globally.</p>
+    </div>
+    <div class="pillar-card animate-on-scroll">
+      <div class="pillar-number">03</div>
+      <div class="pillar-icon gold">💬</div>
+      <h3>Freedom of Speech</h3>
+      <p>Protecting constitutional rights, journalist safety, citizen media, and democratic debate — because free expression is the lifeblood of democracy.</p>
+    </div>
+    <div class="pillar-card animate-on-scroll">
+      <div class="pillar-number">04</div>
+      <div class="pillar-icon blue">🏥</div>
+      <h3>Free Healthcare</h3>
+      <p>Universal healthcare for all — modernised public hospitals, affordable medicines, robust mental health support, and rural healthcare networks.</p>
+    </div>
+    <div class="pillar-card animate-on-scroll">
+      <div class="pillar-number">05</div>
+      <div class="pillar-icon saffron">🏠</div>
+      <h3>Good Standard of Living</h3>
+      <p>Affordable housing, job creation, clean water, better transport, urban infrastructure, and poverty reduction — dignified life for every citizen.</p>
+    </div>
+    <div class="pillar-card animate-on-scroll">
+      <div class="pillar-number">06</div>
+      <div class="pillar-icon green">⚙️</div>
+      <h3>System Reforms</h3>
+      <p>Faster governance, police reform, judicial reform, digital public services, transparent recruitment — rebuilding India's systems for the 21st century.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ MANIFESTO ══════════════════════ -->
+<section id="manifesto">
+  <div class="manifesto-header animate-on-scroll">
+    <div class="section-tag" style="justify-content:center">The Manifesto</div>
+    <h2 class="section-title">Our <span style="color:var(--saffron)">Reform</span> Agenda</h2>
+    <p class="section-desc" style="margin:0 auto">Detailed, actionable, measurable policy commitments — not just promises.</p>
+  </div>
+
+  <div class="manifesto-tabs animate-on-scroll">
+    <button class="mtab active" onclick="filterManifesto(this, 'all')">All</button>
+    <button class="mtab" onclick="filterManifesto(this, 'governance')">Governance</button>
+    <button class="mtab" onclick="filterManifesto(this, 'economy')">Economy</button>
+    <button class="mtab" onclick="filterManifesto(this, 'social')">Social</button>
+    <button class="mtab" onclick="filterManifesto(this, 'digital')">Digital</button>
+    <button class="mtab" onclick="filterManifesto(this, 'environment')">Environment</button>
+  </div>
+
+  <div class="manifesto-content" id="manifestoGrid">
+    <div class="mcard animate-on-scroll" data-cat="governance">
+      <div class="mcard-label">Governance</div>
+      <h3>🏛️ Judicial Reforms</h3>
+      <ul>
+        <li>Faster courts & reduced pendency</li>
+        <li>AI-powered case management system</li>
+        <li>Digital judiciary & e-filing</li>
+        <li>Free legal aid for all citizens</li>
+        <li>Regional language court proceedings</li>
+      </ul>
+    </div>
+    <div class="mcard animate-on-scroll" data-cat="governance">
+      <div class="mcard-label">Governance</div>
+      <h3>👮 Police Reforms</h3>
+      <ul>
+        <li>Mandatory body cameras for all officers</li>
+        <li>Independent Citizen Complaint Authority</li>
+        <li>Cybercrime infrastructure modernisation</li>
+        <li>Human rights & sensitivity training</li>
+        <li>Community policing programmes</li>
+      </ul>
+    </div>
+    <div class="mcard animate-on-scroll" data-cat="economy">
+      <div class="mcard-label">Economy</div>
+      <h3>💼 Employment Reforms</h3>
+      <ul>
+        <li>National Employment Mission — 2 Crore jobs</li>
+        <li>MSME support ecosystem</li>
+        <li>Startup India 2.0 expansion</li>
+        <li>National Apprenticeship Programme</li>
+        <li>Manufacturing Growth Zones</li>
+      </ul>
+    </div>
+    <div class="mcard animate-on-scroll" data-cat="economy">
+      <div class="mcard-label">Economy</div>
+      <h3>📊 Tax Reforms</h3>
+      <ul>
+        <li>Simplified GST — single unified rate</li>
+        <li>Live tax transparency portal</li>
+        <li>Middle-class income tax relief</li>
+        <li>AI-powered anti-black money detection</li>
+        <li>Reduced compliance burden for MSMEs</li>
+      </ul>
+    </div>
+    <div class="mcard animate-on-scroll" data-cat="social">
+      <div class="mcard-label">Social</div>
+      <h3>👩 Women Empowerment</h3>
+      <ul>
+        <li>Comprehensive women's safety law reform</li>
+        <li>Women Entrepreneurship Fund</li>
+        <li>Mandatory workplace equality audits</li>
+        <li>33% leadership participation guarantee</li>
+        <li>Fast-track sexual harassment courts</li>
+      </ul>
+    </div>
+    <div class="mcard animate-on-scroll" data-cat="social">
+      <div class="mcard-label">Social</div>
+      <h3>🌾 Farmer Reforms</h3>
+      <ul>
+        <li>Direct farmer-to-market digital platform</li>
+        <li>Modern micro-irrigation infrastructure</li>
+        <li>Reformed & accessible crop insurance</li>
+        <li>Agricultural AI & drone technology</li>
+        <li>Minimum Support Price guarantee</li>
+      </ul>
+    </div>
+    <div class="mcard animate-on-scroll" data-cat="digital">
+      <div class="mcard-label">Digital</div>
+      <h3>🤖 Digital India 2.0</h3>
+      <ul>
+        <li>AI-powered governance platform</li>
+        <li>Blockchain-based public records</li>
+        <li>Smart governance at village level</li>
+        <li>National Cybersecurity Infrastructure</li>
+        <li>100% digital public service delivery</li>
+      </ul>
+    </div>
+    <div class="mcard animate-on-scroll" data-cat="environment">
+      <div class="mcard-label">Environment</div>
+      <h3>🌿 Environmental Reforms</h3>
+      <ul>
+        <li>Clean Rivers Mission — 5-year programme</li>
+        <li>50% renewable energy by 2035</li>
+        <li>Smart waste management in all cities</li>
+        <li>National Air Quality Emergency plan</li>
+        <li>Climate resilience infrastructure</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ TIMELINE ══════════════════════ -->
+<section id="timeline">
+  <div class="section-tag animate-on-scroll">Reform Roadmap</div>
+  <h2 class="section-title animate-on-scroll">National Reform <span style="color:var(--saffron)">Timeline</span></h2>
+  <p class="section-desc animate-on-scroll">A phased, realistic, and accountable roadmap for transforming India — state by state, system by system.</p>
+
+  <div class="timeline-track">
+    <div class="tl-item animate-on-scroll">
+      <div class="tl-dot"></div>
+      <div class="tl-phase">Phase 1 · Year 1–2</div>
+      <div class="tl-title">Foundation & Mobilisation</div>
+      <p class="tl-desc">Build the CPM infrastructure nationwide. Register 1 crore members across 543 constituencies. Launch the Anti-Corruption helpline, public accountability dashboard, and grievance redressal system. Establish state committees in all 28 states.</p>
+      <div class="tl-tags">
+        <span class="tl-tag">Membership Drive</span>
+        <span class="tl-tag">Grievance Portal</span>
+        <span class="tl-tag">State Committees</span>
+        <span class="tl-tag">Anti-Corruption Helpline</span>
+      </div>
+    </div>
+    <div class="tl-item animate-on-scroll">
+      <div class="tl-dot"></div>
+      <div class="tl-phase">Phase 2 · Year 2–3</div>
+      <div class="tl-title">State Elections & Governance Entry</div>
+      <p class="tl-desc">Contest state assembly elections with merit-based, anti-dynasty candidates. Implement pilot reform programmes in municipalities where representation is won. Launch Digital Transparency Dashboards. Publish quarterly accountability reports.</p>
+      <div class="tl-tags">
+        <span class="tl-tag">State Elections</span>
+        <span class="tl-tag">Merit Candidates</span>
+        <span class="tl-tag">Transparency Dashboards</span>
+        <span class="tl-tag">Pilot Reforms</span>
+      </div>
+    </div>
+    <div class="tl-item animate-on-scroll">
+      <div class="tl-dot"></div>
+      <div class="tl-phase">Phase 3 · Year 3–5</div>
+      <div class="tl-title">National Reform Legislation</div>
+      <p class="tl-desc">Introduce constitutional reform bills: Fast-Track Corruption Courts Act, Universal Education Guarantee Act, Healthcare for All Act, and Digital Governance Act. Build cross-party reform alliances and push for legislative change at the national level.</p>
+      <div class="tl-tags">
+        <span class="tl-tag">Corruption Courts Act</span>
+        <span class="tl-tag">Education Guarantee</span>
+        <span class="tl-tag">Healthcare for All</span>
+        <span class="tl-tag">Cross-Party Alliance</span>
+      </div>
+    </div>
+    <div class="tl-item animate-on-scroll">
+      <div class="tl-dot"></div>
+      <div class="tl-phase">Phase 4 · Year 5+</div>
+      <div class="tl-title">India Transformed</div>
+      <p class="tl-desc">A measurably better India: Corruption Index reduced by 40%, Universal school enrolment achieved, public hospitals rated world-class, judicial pendency halved, and transparent governance embedded in every public institution. India Deserved Better — and got it.</p>
+      <div class="tl-tags">
+        <span class="tl-tag">Governance Excellence</span>
+        <span class="tl-tag">Zero Pendency Courts</span>
+        <span class="tl-tag">Universal Education</span>
+        <span class="tl-tag">Digital Democracy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ TRANSPARENCY DASHBOARD ══════════════════════ -->
+<section id="transparency">
+  <div class="section-tag animate-on-scroll">Live Transparency</div>
+  <h2 class="section-title animate-on-scroll">Public Accountability <span style="color:var(--saffron)">Dashboard</span></h2>
+  <p class="section-desc animate-on-scroll">Real-time reporting on CPM's finances, membership, volunteer activity, and reform impact — because we hold ourselves to the same standards we demand of government.</p>
+
+  <div class="dashboard-grid">
+    <div class="dash-card animate-on-scroll">
+      <div class="dash-card-header">
+        <div class="dash-label">Total Donations Received</div>
+        <div class="dash-badge badge-live">● Live</div>
+      </div>
+      <div class="dash-value">₹4.2 Cr</div>
+      <div class="dash-sub">100% from citizens · No corporate funding</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:72%"></div></div>
+    </div>
+    <div class="dash-card animate-on-scroll">
+      <div class="dash-card-header">
+        <div class="dash-label">Active Volunteers</div>
+        <div class="dash-badge badge-live">● Live</div>
+      </div>
+      <div class="dash-value">1,84,000</div>
+      <div class="dash-sub">Across 543 constituencies</div>
+      <div class="progress-bar"><div class="progress-fill green" style="width:60%"></div></div>
+    </div>
+    <div class="dash-card animate-on-scroll">
+      <div class="dash-card-header">
+        <div class="dash-label">Grievances Resolved</div>
+        <div class="dash-badge badge-open">Open Portal</div>
+      </div>
+      <div class="dash-value">12,400</div>
+      <div class="dash-sub">Avg resolution: 4.2 days</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div>
+    </div>
+    <div class="dash-card animate-on-scroll">
+      <div class="dash-card-header">
+        <div class="dash-label">States with Active Committees</div>
+        <div class="dash-badge badge-live">● Live</div>
+      </div>
+      <div class="dash-value">28 / 28</div>
+      <div class="dash-sub">Full national coverage achieved</div>
+      <div class="progress-bar"><div class="progress-fill green" style="width:100%"></div></div>
+    </div>
+    <div class="dash-card animate-on-scroll">
+      <div class="dash-card-header">
+        <div class="dash-label">Policy Papers Published</div>
+        <div class="dash-badge badge-open">Open Access</div>
+      </div>
+      <div class="dash-value">47</div>
+      <div class="dash-sub">Peer-reviewed · Publicly available</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:47%"></div></div>
+    </div>
+    <div class="dash-card animate-on-scroll">
+      <div class="dash-card-header">
+        <div class="dash-label">Campaign Spend Audited</div>
+        <div class="dash-badge badge-live">● Live</div>
+      </div>
+      <div class="dash-value">100%</div>
+      <div class="dash-sub">Third-party verified · Published quarterly</div>
+      <div class="progress-bar"><div class="progress-fill green" style="width:100%"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ YOUTH WING ══════════════════════ -->
+<section id="youth">
+  <div class="section-tag" style="justify-content:center" class="animate-on-scroll">Youth Wing</div>
+  <h2 class="section-title animate-on-scroll">The <span style="color:var(--saffron)">Youth Revolution</span></h2>
+  <p class="section-desc animate-on-scroll" style="margin:0 auto 1rem">India's 65% youth population isn't just a statistic — it is our mandate, our leadership, and our future.</p>
+
+  <div class="youth-grid">
+    <div class="youth-card animate-on-scroll">
+      <span class="emoji">🎓</span>
+      <h3>Student Leaders Network</h3>
+      <p>Empowering student union leaders across universities to champion reform, transparency, and democratic values on campus and beyond.</p>
+    </div>
+    <div class="youth-card animate-on-scroll">
+      <span class="emoji">💻</span>
+      <h3>Digital Democracy Corps</h3>
+      <p>Training young Indians in digital activism, policy communication, social media strategy, and civic technology for the 21st century.</p>
+    </div>
+    <div class="youth-card animate-on-scroll">
+      <span class="emoji">🚀</span>
+      <h3>Young Leaders Programme</h3>
+      <p>A merit-based pipeline to put qualified young Indians on the path to contesting elections — no dynasty, no nepotism, just capability.</p>
+    </div>
+    <div class="youth-card animate-on-scroll">
+      <span class="emoji">🌐</span>
+      <h3>Reform Innovation Labs</h3>
+      <p>Hackathons, policy competitions, and governance innovation challenges — turning youth ideas into actual legislation and policy.</p>
+    </div>
+    <div class="youth-card animate-on-scroll">
+      <span class="emoji">🤝</span>
+      <h3>District Youth Cells</h3>
+      <p>Grassroots youth committees in every district driving local issue resolution, volunteer mobilisation, and community development.</p>
+    </div>
+    <div class="youth-card animate-on-scroll">
+      <span class="emoji">📣</span>
+      <h3>Anti-Dynasty Pledge</h3>
+      <p>CPM's founding commitment: leadership earned through merit, not inheritance. No dynastic politics. Ever. The first party to codify it constitutionally.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ JOIN / MEMBERSHIP FORM ══════════════════════ -->
+<section id="join">
+  <div class="join-grid">
+    <div class="animate-on-scroll">
+      <div class="section-tag">Join the Movement</div>
+      <h2 class="section-title">Be Part of <span style="color:var(--saffron)">India's Reform</span></h2>
+      <p class="section-desc" style="margin-bottom:2.5rem">Every member matters. Every voice counts. Join 25 lakh+ Indians demanding better governance, better systems, and a better future.</p>
+
+      <div style="display:flex;flex-direction:column;gap:1.2rem;margin-bottom:2rem">
+        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,153,51,0.15);border:1px solid rgba(255,153,51,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">✊</div>
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.25rem">Citizen Membership — Free</div>
+            <div style="font-size:0.8rem;color:var(--text-dim)">Full access to events, policy discussions, and digital campaigns. Your voice in every CPM decision.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <div style="width:36px;height:36px;border-radius:50%;background:rgba(19,136,8,0.15);border:1px solid rgba(19,136,8,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">🌟</div>
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.25rem">Volunteer — Active Changemaker</div>
+            <div style="font-size:0.8rem;color:var(--text-dim)">Ground-level campaign work, constituency outreach, and community events. Be the face of CPM in your district.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <div style="width:36px;height:36px;border-radius:50%;background:rgba(212,168,67,0.15);border:1px solid rgba(212,168,67,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">👑</div>
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.25rem">Youth Wing Member</div>
+            <div style="font-size:0.8rem;color:var(--text-dim)">Exclusive youth programmes, leadership training, and the Young Leaders Pipeline to public service.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="https://wa.me/919999999999?text=I+want+to+join+CPM" class="btn-primary" style="text-decoration:none;font-size:0.8rem;padding:12px 24px">
+          📱 Join via WhatsApp
+        </a>
+        <a href="#" class="btn-outline" style="text-decoration:none;font-size:0.8rem;padding:11px 22px">
+          📲 Telegram Channel
+        </a>
+      </div>
+    </div>
+
+    <div class="join-form animate-on-scroll">
+      <div class="form-title">🇮🇳 Join Common People Movement</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label>Age *</label>
+          <input type="number" placeholder="Your age" min="18" max="99">
+        </div>
+        <div class="form-group">
+          <label>Mobile Number *</label>
+          <input type="tel" placeholder="+91 XXXXX XXXXX">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>State *</label>
+          <select>
+            <option value="">Select State</option>
+            <option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option><option>Bihar</option><option>Chhattisgarh</option><option>Goa</option><option>Gujarat</option><option>Haryana</option><option>Himachal Pradesh</option><option>Jharkhand</option><option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option><option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option><option>Mizoram</option><option>Nagaland</option><option>Odisha</option><option>Punjab</option><option>Rajasthan</option><option>Sikkim</option><option>Tamil Nadu</option><option>Telangana</option><option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option><option>Delhi</option><option>Jammu & Kashmir</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>District *</label>
+          <input type="text" placeholder="Your district">
+        </div>
+        <div class="form-group">
+          <label>Occupation</label>
+          <select>
+            <option value="">Select Occupation</option>
+            <option>Student</option><option>Government Employee</option><option>Private Sector</option><option>Business / MSME</option><option>Farmer</option><option>Healthcare Worker</option><option>Lawyer / Legal</option><option>Journalist / Media</option><option>Teacher / Educator</option><option>Tech / IT Professional</option><option>Labour / Worker</option><option>Homemaker</option><option>Retired</option><option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Membership Type</label>
+          <select>
+            <option>Citizen Member (Free)</option>
+            <option>Volunteer</option>
+            <option>Youth Wing Member</option>
+            <option>District Coordinator</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Skills / How Can You Help?</label>
+          <textarea placeholder="e.g. Social media, Ground campaigning, Policy research, Legal, Tech, Event management..."></textarea>
+        </div>
+      </div>
+      <button class="btn-primary submit-btn" onclick="submitForm()">
+        ⚡ Submit & Join the Movement
+      </button>
+      <p style="text-align:center;font-size:0.72rem;color:var(--text-dim);margin-top:1rem">Your data is safe and will never be sold or shared. By joining, you agree to CPM's Charter of Democratic Values.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ DONATE ══════════════════════ -->
+<section id="donate">
+  <div class="donate-container animate-on-scroll">
+    <div class="section-tag" style="justify-content:center">Transparent Funding</div>
+    <h2 class="section-title">Fund the <span style="color:var(--saffron)">Revolution</span></h2>
+    <p class="section-desc" style="margin:0 auto 2rem">Every rupee you contribute is publicly declared, audited, and reported. CPM accepts no corporate money — only citizen power.</p>
+
+    <div class="donate-amounts">
+      <button class="amount-btn" onclick="selectAmount(this)">₹100</button>
+      <button class="amount-btn active" onclick="selectAmount(this)">₹500</button>
+      <button class="amount-btn" onclick="selectAmount(this)">₹1,000</button>
+      <button class="amount-btn" onclick="selectAmount(this)">₹5,000</button>
+      <button class="amount-btn" onclick="selectAmount(this)">₹10,000</button>
+      <button class="amount-btn" onclick="selectAmount(this)">Other</button>
+    </div>
+
+    <div class="qr-placeholder">
+      <div>
+        <div style="font-size:2rem;margin-bottom:0.5rem">⬛⬛⬛</div>
+        <div>UPI QR CODE</div>
+        <div style="font-weight:400;margin-top:4px;opacity:0.7">Scan to Pay</div>
+        <div style="margin-top:8px;letter-spacing:0.05em">cpm@upi</div>
+      </div>
+    </div>
+
+    <button class="btn-primary" style="width:100%;justify-content:center;margin-bottom:1rem">
+      💳 Donate via UPI / Card / Net Banking
+    </button>
+
+    <div class="ethical-note">
+      🔒 <strong>Ethical Funding Commitment:</strong> CPM is funded exclusively by individual citizens. No corporate donations. No foreign funding. All contributions above ₹2,000 are publicly disclosed. Full financial statements published quarterly. Audited by independent CA firms and available on this website.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ CONTACT / SOCIAL ══════════════════════ -->
+<section id="contact">
+  <div class="section-tag animate-on-scroll">Connect</div>
+  <h2 class="section-title animate-on-scroll">Follow the <span style="color:var(--saffron)">Movement</span></h2>
+  <p class="section-desc animate-on-scroll">Stay informed, stay engaged. Join millions of Indians building a better tomorrow — on the platforms you already use.</p>
+
+  <div class="social-grid">
+    <a class="social-card animate-on-scroll" href="#">
+      <div class="social-icon" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)">📷</div>
+      <h3>Instagram</h3>
+      <p>@CommonPeopleMovement</p>
+    </a>
+    <a class="social-card animate-on-scroll" href="#">
+      <div class="social-icon" style="background:#ff0000">▶️</div>
+      <h3>YouTube</h3>
+      <p>CPM India Channel</p>
+    </a>
+    <a class="social-card animate-on-scroll" href="#">
+      <div class="social-icon" style="background:#000">𝕏</div>
+      <h3>X / Twitter</h3>
+      <p>@CPM_India</p>
+    </a>
+    <a class="social-card animate-on-scroll" href="#">
+      <div class="social-icon" style="background:#0088cc">✈️</div>
+      <h3>Telegram</h3>
+      <p>t.me/CPMIndia</p>
+    </a>
+    <a class="social-card animate-on-scroll" href="#">
+      <div class="social-icon" style="background:#25d366">💬</div>
+      <h3>WhatsApp Channel</h3>
+      <p>Join 10L+ members</p>
+    </a>
+    <a class="social-card animate-on-scroll" href="mailto:info@cpm.org.in">
+      <div class="social-icon" style="background:rgba(255,153,51,0.2)">📧</div>
+      <h3>Email Us</h3>
+      <p>info@cpm.org.in</p>
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════════════ FOOTER ══════════════════════ -->
+<footer>
+  <div class="tricolor-bar">
+    <span class="s"></span><span class="w"></span><span class="g"></span>
+  </div>
+  <br>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#hero" class="nav-logo" style="margin-bottom:0.75rem;display:inline-flex">
+        <svg width="38" height="38" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="38" stroke="#FF9933" stroke-width="2" opacity="0.3"/>
+          <path d="M40 12 L62 22 L62 42 C62 55 52 65 40 70 C28 65 18 55 18 42 L18 22 Z" fill="rgba(255,153,51,0.08)" stroke="#FF9933" stroke-width="1.5"/>
+          <rect x="37" y="32" width="6" height="18" rx="2" fill="#FF9933"/>
+          <ellipse cx="40" cy="30" rx="5" ry="4" fill="#FFD700"/>
+          <path d="M26 50 Q33 45 40 48 Q47 45 54 50" stroke="#138808" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </svg>
+        <div class="logo-text" style="margin-left:10px">
+          <div class="cpm">CPM</div>
+          <div class="full">Common People Movement</div>
+        </div>
+      </a>
+      <div class="tagline">"People Before Politics"</div>
+      <p class="vision-short">Building a corruption-free, educated, healthy, transparent, and citizen-first India where every individual lives with dignity, freedom, and equal opportunity.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Movement</h4>
+      <ul>
+        <li><a href="#vision">About CPM</a></li>
+        <li><a href="#pillars">Core Pillars</a></li>
+        <li><a href="#manifesto">Full Manifesto</a></li>
+        <li><a href="#timeline">Reform Roadmap</a></li>
+        <li><a href="#youth">Youth Wing</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Get Involved</h4>
+      <ul>
+        <li><a href="#join">Join CPM</a></li>
+        <li><a href="#join">Volunteer</a></li>
+        <li><a href="#donate">Donate</a></li>
+        <li><a href="#">Report Corruption</a></li>
+        <li><a href="#">Events</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Transparency</h4>
+      <ul>
+        <li><a href="#transparency">Live Dashboard</a></li>
+        <li><a href="#">Annual Reports</a></li>
+        <li><a href="#">Financial Audit</a></li>
+        <li><a href="#">Policy Papers</a></li>
+        <li><a href="#">Press Room</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2024 Common People Movement. All rights reserved. | A constitutional democratic reform organisation | Registered in India</p>
+    <p>Jai Hind 🇮🇳 &nbsp;·&nbsp; <a href="#" style="color:rgba(255,255,255,0.3);text-decoration:none">Privacy Policy</a> &nbsp;·&nbsp; <a href="#" style="color:rgba(255,255,255,0.3);text-decoration:none">Terms</a> &nbsp;·&nbsp; <a href="#" style="color:rgba(255,255,255,0.3);text-decoration:none">RTI</a></p>
+  </div>
+</footer>
+
+<!-- ══════════════════════ AI CHATBOT ══════════════════════ -->
+<button class="chatbot-fab" onclick="toggleChat()" title="Chat with CPM Assistant">🤖</button>
+<div class="chatbot-window" id="chatWindow">
+  <div class="chatbot-header">
+    <div class="avatar">🏛️</div>
+    <div class="info">
+      <div class="name">CPM Reform Assistant</div>
+      <div class="status">Online · Powered by AI</div>
+    </div>
+    <button class="close-btn" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chatbot-messages" id="chatMessages">
+    <div class="msg bot">Jai Hind! 🇮🇳 I'm the CPM Reform Assistant. I can help you learn about our manifesto, join the movement, or understand our reform agenda. How can I help you today?</div>
+    <div class="msg bot">Quick options: Ask about our <strong>Anti-Corruption policy</strong>, <strong>Free Education plan</strong>, <strong>Healthcare agenda</strong>, or how to <strong>join CPM</strong>.</div>
+  </div>
+  <div class="chatbot-input-wrap">
+    <input class="chatbot-input" id="chatInput" type="text" placeholder="Ask about CPM policies..." onkeypress="chatKeyPress(event)">
+    <button class="chatbot-send" onclick="sendChat()">➤</button>
+  </div>
+</div>
+
+<!-- ══════════════════════ SCRIPTS ══════════════════════ -->
+<script>
+// ── PARTICLES ──
+(function createParticles() {
+  const container = document.getElementById('particles');
+  const colors = ['#FF9933','#138808','#FFD700','rgba(255,255,255,0.4)'];
+  for (let i = 0; i < 35; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 4 + 1;
+    p.style.cssText = `
+      width:${size}px;height:${size}px;
+      left:${Math.random()*100}%;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      animation-duration:${Math.random()*12+8}s;
+      animation-delay:${Math.random()*10}s;
+    `;
+    container.appendChild(p);
+  }
+})();
+
+// ── ANIMATE ON SCROLL ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// ── COUNTER ANIMATION ──
+function animateCounter(el, target, suffix='') {
+  const dur = 2000;
+  const start = Date.now();
+  const fmt = n => n >= 1000000 ? (n/1000000).toFixed(1)+'M' : n >= 100000 ? (n/100000).toFixed(1)+'L' : n.toLocaleString('en-IN');
+  const tick = () => {
+    const pct = Math.min((Date.now()-start)/dur, 1);
+    const ease = 1 - Math.pow(1-pct, 3);
+    el.textContent = fmt(Math.floor(ease * target)) + suffix;
+    if (pct < 1) requestAnimationFrame(tick);
+  };
+  tick();
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const target = +e.target.dataset.target;
+      const suffix = e.target.dataset.suffix || '';
+      animateCounter(e.target, target, suffix);
+      counterObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+// ── MOBILE MENU ──
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// ── MANIFESTO TABS ──
+function filterManifesto(btn, cat) {
+  document.querySelectorAll('.mtab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.mcard').forEach(c => {
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none';
+  });
+}
+
+// ── DONATION AMOUNTS ──
+function selectAmount(btn) {
+  document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ── FORM SUBMIT ──
+function submitForm() {
+  alert('🇮🇳 Thank you for joining Common People Movement!\n\nYou will receive a confirmation on your mobile number shortly. Together, we will build the India we deserve.\n\nJai Hind!');
+}
+
+// ── CHATBOT ──
+const chatAnswers = {
+  'corruption': 'CPM\'s Anti-Corruption plan includes: AI-powered monitoring, fast-track corruption courts, public audit dashboards, whistleblower protection law, and digital governance to eliminate opacity. We believe zero tolerance for corruption is non-negotiable.',
+  'education': 'CPM\'s Free Education plan covers: universal free quality education, digital classrooms in rural India, AI & coding curriculum, competitive exam coaching support, vocational training, and financial literacy — from primary school to university.',
+  'healthcare': 'CPM\'s Healthcare agenda: Universal public healthcare for all citizens, modernisation of government hospitals, affordable generic medicines, rural health infrastructure, mental health support, and comprehensive health insurance reform.',
+  'join': 'Joining CPM is simple and free! Fill in the membership form on this page, or WhatsApp us at the number shown. We have Citizen, Volunteer, and Youth Wing membership — all open to every Indian above 18.',
+  'youth': 'CPM\'s Youth Wing offers: Student Leaders Network, Digital Democracy Corps, Young Leaders Programme, Reform Innovation Labs, District Youth Cells, and the Anti-Dynasty Pledge. 65% of our members are under 35!',
+  'donate': 'CPM accepts only citizen donations — no corporate money. You can donate via UPI, card, or net banking. All donations above ₹2,000 are publicly disclosed. Full financial audit published quarterly.',
+  'manifesto': 'CPM\'s Manifesto covers 12 key reform areas: Anti-Corruption, Free Education, Healthcare, System Reforms, Judicial Reform, Police Reform, Women Empowerment, Farmer Welfare, Digital India 2.0, Tax Reform, Environmental Reform, and Labour Rights.',
+  'default': 'Great question! CPM is India\'s citizen-powered reform movement committed to Anti-Corruption, Free Education, Universal Healthcare, and systemic governance change. Would you like to know about a specific policy area or how to join?'
+};
+
+function toggleChat() {
+  document.getElementById('chatWindow').classList.toggle('open');
+}
+
+function sendChat() {
+  const input = document.getElementById('chatInput');
+  const msg = input.value.trim();
+  if (!msg) return;
+  
+  const msgs = document.getElementById('chatMessages');
+  
+  // User message
+  const userMsg = document.createElement('div');
+  userMsg.className = 'msg user';
+  userMsg.textContent = msg;
+  msgs.appendChild(userMsg);
+  
+  // Bot response
+  setTimeout(() => {
+    const botMsg = document.createElement('div');
+    botMsg.className = 'msg bot';
+    const lower = msg.toLowerCase();
+    let response = chatAnswers.default;
+    for (const [key, val] of Object.entries(chatAnswers)) {
+      if (lower.includes(key)) { response = val; break; }
+    }
+    botMsg.textContent = response;
+    msgs.appendChild(botMsg);
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 600);
+  
+  input.value = '';
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function chatKeyPress(e) {
+  if (e.key === 'Enter') sendChat();
+}
+
+// ── SCROLL NAVBAR EFFECT ──
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  nav.style.background = window.scrollY > 80 
+    ? 'rgba(10,35,66,0.98)' 
+    : 'rgba(10,35,66,0.92)';
+});
+
+// ── PROGRESS BAR ANIMATION ──
+const progObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.progress-fill').forEach(bar => {
+        const w = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => bar.style.width = w, 200);
+      });
+      progObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.dash-card').forEach(c => progObserver.observe(c));
+</script>
+</body>
+</html>
